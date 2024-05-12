@@ -1,1 +1,5 @@
-{}
+{
+  "/api/getList/route": "app/api/getList/route.js",
+  "/page": "app/page.js",
+  "/main/page": "app/main/page.js"
+}
