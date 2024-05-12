@@ -5,11 +5,13 @@ import events from '../../models/Events';
 export async function GET() {
     try {
         connectMongo();
-        const eventsList = events.find().limit(10).toArray();
-        console.log(eventsList)
+        const eventsList = await events.find()
         return NextResponse.json(eventsList)
     } catch (e) {
         console.error(e);
+        return NextResponse.json({
+            message: "Error!"
+        })
     }
 }
 
