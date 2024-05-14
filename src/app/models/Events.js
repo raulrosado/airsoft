@@ -23,4 +23,4 @@ const Events = mongoose.Schema(
         },
     }
 );
-export default mongoose.models.Events || mongoose.model("Events", Events);
+export default mongoose.model("events", Events);

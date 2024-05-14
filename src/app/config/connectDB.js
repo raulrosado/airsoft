@@ -1,7 +1,9 @@
 import { config } from "./config";
 import mongoose from 'mongoose';
 
-const DATABASE_URL = process.env.DATABASE_URL;
+// const DATABASE_URL = process.env.DATABASE_URL;
+const DATABASE_URL = "mongodb+srv://raulrosado91:N0t3lav0yad3c1r@buyshare.t3ffzxr.mongodb.net/airsoft?retryWrites=true&w=majority";
+// console.log(DATABASE_URL)
 
 if (!DATABASE_URL) {
   throw new Error("Please define the DATABASE_URL environment variable inside .env.local");
@@ -22,7 +24,6 @@ async function connectDB() {
     const opts = {
       bufferCommands: false,
     };
-    console.log(DATABASE_URL)
     cached.promise = mongoose.connect(DATABASE_URL, opts).then((mongoose) => {
       return mongoose;
     });
